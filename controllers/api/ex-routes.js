@@ -18,6 +18,14 @@ router.get("/", async (req, res) => {
       gallery.get({ plain: true })
     );
 
+    //EXAMPLE SESSION SAVE
+    req.session.save(function (err) {
+      if (err) {
+        console.log(err);
+      }
+      // function - session saved
+    });
+
     res.render("homepage", {
       galleries,
     });
