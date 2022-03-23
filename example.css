@@ -12,14 +12,17 @@ html, body {
   left: 20px;
   width: 250px;
   padding: 0 10px;
-  border: 1px solid #ccc;
+  border: 1px solid rgb(0, 0, 0);
   background: rgb(168, 193, 229);
   height: 750px !important;
+  text-align: center !important;
+  font-size: large;
 }
 
-/* btn {
+btn {
   background-color: grey !important;
-} */
+  color: black !important;
+}
 
 #external-events .fc-event {
   cursor: grab;

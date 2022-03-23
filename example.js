@@ -18,7 +18,6 @@ document.addEventListener('DOMContentLoaded', function() {
     var checkbox = document.getElementById('drop-remove');
   
     // initialize the external events
-    // -----------------------------------------------------------------
   
     new Draggable(containerEl, {
       itemSelector: '.fc-event',
@@ -30,7 +29,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   
     // initialize the calendar
-    // -----------------------------------------------------------------
    
     // calendar.addEvent( event [, source ] )
 
@@ -132,47 +130,3 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     calendar.render();
 });
-
-
-
-
-// document.addEventListener('DOMContentLoaded', function() {
-//         var calendarEl = document.getElementById('calendar');
-//         var calendar = new FullCalendar.Calendar(calendarEl, {
-//         initialView: 'dayGridMonth, listYear',
-//         themeSystem: 'bootstrap5',
-//         // plugins: [ googleCalendarPlugin ],
-//         googleCalendarApiKey: 'AIzaSyAh3d6j-Y63jjjukLBG7FMPi8-qlQYT-94',
-//         headerToolbar: {
-//             left: 'prev,next today',
-//             center: 'title',
-//             right: 'dayGridMonth,timeGridWeek,timeGridDay'
-//         },
-//         events: {
-//         googleCalendarId: 'allpainnogainproject@gmail.com'
-//         },
-//         events: [
-//             {
-//             title: 'All Day Event',
-//             start: '2022-03-01'
-//             },
-//             {
-//             title: 'Long Event',
-//             start: '2022-03-07',
-//             end: '2022-03-10'
-//             },
-//         ]
-//         });
-
-//         calendar.render();
-//         });
-
-
-
-
-// fetch(calendar)
-
-// .then(response => response.json())
-// .then(data => {console.log(data)
-// })
-
