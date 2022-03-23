@@ -9,4 +9,19 @@ const Model = require("./Model");
 //   foreignKey: "",
 // });
 
-module.exports = { User, Gallery, Painting };
+const Event = require("./Event");
+const User = require("./User-pass-val");
+
+
+Event.belongsTo(User, {
+  foreignKey: "event_id",
+  onDelete: "SET NULL",
+});
+
+
+module.exports = {
+  User,
+ Event
+};
+
+
