@@ -25,7 +25,7 @@ const hbs = exphbs.create({});
 //   }),
 // };
 // app.use(session(sess));
-app.use(session(process.env.sess));
+// app.use(session(process.env.sess));
 
 app.engine("handlebars", hbs.engine);
 app.set("view engine", "handlebars");

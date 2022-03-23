@@ -1,23 +1,21 @@
 const router = require("express").Router();
 //EXAMPLE MODEL REQUIRE
-// const { Gallery, Painting } = require('../models');
+const { User, Painting } = require("../models");
 
 // GET all THINGS - Gallery Model - including model Painting - 'homepage' handlebars template
 router.get("/", async (req, res) => {
   try {
-    const dbGalleryData = await Gallery.findAll({
-      include: [
-        {
-          model: Painting,
-          attributes: ["filename", "description"],
-        },
-      ],
+    const dbUserData = await User.findAll({
+      // include: [
+      //   {
+      //     model: Painting,
+      //     attributes: ["filename", "description"],
+      //   },
+      // ],
     });
 
-    const galleries = dbGalleryData.map((gallery) =>
-      gallery.get({ plain: true })
-    );
-
+    const galleries = dbUserData.map((x) => x.get({ plain: true }));
+    console.log();
     //EXAMPLE SESSION SAVE
     req.session.save(function (err) {
       if (err) {
