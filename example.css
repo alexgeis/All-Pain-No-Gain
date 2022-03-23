@@ -10,12 +10,16 @@ html, body {
   z-index: 2;
   top: 20px;
   left: 20px;
-  width: 150px;
+  width: 250px;
   padding: 0 10px;
   border: 1px solid #ccc;
   background: rgb(168, 193, 229);
-  height: 350px !important;
+  height: 750px !important;
 }
+
+/* btn {
+  background-color: grey !important;
+} */
 
 #external-events .fc-event {
   cursor: grab;
@@ -29,10 +33,12 @@ html, body {
 }
 
 #calendar {
-  /* max-width: 1100px; */
+  max-width: 1100px; 
   margin-left: 400px !important;
-  /* margin-bottom: 1100px !important;
-  width: 2000px !important; */
-  margin: 20px auto;
+  margin-bottom: 1100px !important;
+  width: 2000px !important; 
+margin: 20px auto;
 }
+
+
   
