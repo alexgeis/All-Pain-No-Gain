@@ -1,6 +1,14 @@
 // AIzaSyAh3d6j-Y63jjjukLBG7FMPi8-qlQYT-94
  // "@fullcalendar/bootstrap5": "^5.10.2",
 // const { response } = require("express");
+
+// Drop Down Menu
+var dropdownElementList = [].slice.call(document.querySelectorAll('.dropdown-toggle'))
+var dropdownList = dropdownElementList.map(function (dropdownToggleEl) {
+  return new bootstrap.Dropdown(dropdownToggleEl)
+})
+
+
 document.addEventListener('DOMContentLoaded', function() {
     var Calendar = FullCalendar.Calendar;
     var Draggable = FullCalendar.Draggable;
@@ -23,13 +31,16 @@ document.addEventListener('DOMContentLoaded', function() {
   
     // initialize the calendar
     // -----------------------------------------------------------------
-  
+   
+    // calendar.addEvent( event [, source ] )
+
     var calendar = new Calendar(calendarEl, {
       headerToolbar: {
-        left: 'prev,next today',
+        // left: 'prev,next today',
         center: 'title',
         right: 'dayGridMonth,timeGridWeek,timeGridDay'
       },
+      // width: 1650,
       editable: true,
       droppable: true, // this allows things to be dropped onto the calendar
       drop: function(info) {
@@ -45,6 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
 
+
 document.addEventListener('DOMContentLoaded', function() {
     var calendarEl = document.getElementById('calendar');
     var calendar = new FullCalendar.Calendar(calendarEl, {
@@ -54,9 +66,53 @@ document.addEventListener('DOMContentLoaded', function() {
     googleCalendarApiKey: 'AIzaSyAh3d6j-Y63jjjukLBG7FMPi8-qlQYT-94',
     timeZone: 'UTC',
     headerToolbar: {
-    left: 'prev,next today',
+    left: 'today, dayGridMonth,timeGridWeek,timeGridDay mealBtn',
     center: 'title',
-    right: 'dayGridMonth,timeGridWeek,timeGridDay'
+    right: 'dayGridMonth,timeGridWeek,timeGridDay',
+    right: 'workoutBtn prevYear,prev,next,nextYear'
+  },
+  footerToolbar: {
+    left: 'custom1,custom2',
+    center: '',
+    right: 'prev,next'
+  },
+    customButtons: {
+      workoutBtn: {
+        text: 'Add Workout',
+        click: function() {
+          var dateStr = prompt('Enter a date in YYYY-MM-DD format for your workout');
+          var date = new Date(dateStr + 'T00:00:00'); // will be in local time
+
+          if (!isNaN(date.valueOf())) { // valid?
+            calendar.addEvent({
+              title: 'dynamic event',
+              start: date,
+              allDay: true
+            });
+            alert('Great. Now, update your database...');
+          } else {
+            alert('Invalid date.');
+          }
+        }
+      },
+      mealBtn: {
+        text: 'Add Meal',
+        click: function() {
+          var dateStr = prompt('Enter a date in YYYY-MM-DD format for your meal');
+          var date = new Date(dateStr + 'T00:00:00'); // will be in local time
+
+          if (!isNaN(date.valueOf())) { // valid?
+            calendar.addEvent({
+              title: 'dynamic event',
+              start: date,
+              allDay: true
+            });
+            alert('Great. Now, update your database...');
+          } else {
+            alert('Invalid date.');
+          }
+        }
+      },
     },
     editable: true,
     dayMaxEvents: true, // when too many events in a day, show the popover
