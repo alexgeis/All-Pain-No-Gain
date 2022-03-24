@@ -12,8 +12,12 @@
 const Event = require("./Event");
 const User = require("./User-pass-val");
 
-Event.belongsTo(User, {
-  foreignKey: "event_id",
+Event.belongsTo(User);
+
+User.hasMany(Event, {
+  foreignKey: {
+    allowNull: true,
+  },
   onDelete: "SET NULL",
 });
 
