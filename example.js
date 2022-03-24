@@ -175,30 +175,30 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 // Events for calendar
-var calendar = new Calendar(calendarEl, {
-  timeZone: 'UTC',
-  events: [
-    {
-      id: 'a',
-      title: 'my event',
-      start: '2022-30-03'
-    }
-  ], 
-  //Need to set our button
-select: function(start, end, resource) {
-  console.log(
-  'select callback',
-  start.format(),
-  end.format(),
-  resource ? resource.id : '(no resource)'
-  );
-  }
-  });
+// var calendar = new Calendar(calendarEl, {
+//   timeZone: 'UTC',
+//   events: [
+//     {
+//       id: 'a',
+//       title: 'my event',
+//       start: '2022-30-03'
+//     }
+//   ], 
+//   //Need to set our button
+// select: function(start, end, resource) {
+//   console.log(
+//   'select callback',
+//   start.format(),
+//   end.format(),
+//   resource ? resource.id : '(no resource)'
+//   );
+//   }
+//   });
 
-  //Our button to delete Events
-  $('#Delete').on('click', function() {
-  $('#calendar').fullCalendar('removeEvents', a); 
-      });
+  // //Our button to delete Events
+  // $('#Delete').on('click', function() {
+  // $('#calendar').fullCalendar('removeEvents', a); 
+  //     });
 
 // });
 
@@ -222,11 +222,16 @@ select: function(start, end, resource) {
 //     }
 //   }
 // }); 
-var event = calendar.getEventById('a') // an event object!
-var start = event.start // a property (a Date object)
-console.log(start.toISOString()) // "2018-09-01T00:00:00.000Z"
 
-calendar.render();
+
+
+
+
+// var event = calendar.getEventById('a') // an event object!
+// var start = event.start // a property (a Date object)
+// console.log(start.toISOString()) // "2018-09-01T00:00:00.000Z"
+
+// calendar.render();
 
 
 
