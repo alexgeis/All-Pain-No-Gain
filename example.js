@@ -58,27 +58,6 @@ document.addEventListener('DOMContentLoaded', function() {
     calendar.render();
   });
 
-
-    //to delete events
-//     new Draggable2(containerEl), {
-//     itemSelector: '.fc-event',
-//     eventDragStop: function(removeEvents) {
-
-//   var trashEl = jQuery('#calendarTrash');
-//   var ofs = trashEl.offset();
-
-//   var x1 = ofs.left;
-//   var x2 = ofs.left + trashEl.outerWidth(true);
-//   var y1 = ofs.top;
-//   var y2 = ofs.top + trashEl.outerHeight(true);
-
-//   if (jsEvent.pageX >= x1 && jsEvent.pageX<= x2 &&
-//       jsEvent.pageY >= y1 && jsEvent.pageY <= y2) {
-//       alert('SIII');
-//       $('#calendario').fullCalendar('removeEvents', event.id);
-//   }
-// }}
-
 //______________________________________________________________________________________________
 //Add events to calendar/formatting
 document.addEventListener('DOMContentLoaded', function() {
@@ -94,7 +73,6 @@ document.addEventListener('DOMContentLoaded', function() {
     headerToolbar: {
     left: 'today, dayGridMonth,timeGridWeek,timeGridDay mealBtn',
     center: 'title',
-    // right: 'dayGridMonth,timeGridWeek,timeGridDay',
     right: 'workoutBtn prevYear,prev,next,nextYear'
   },
   footerToolbar: {
@@ -104,16 +82,11 @@ document.addEventListener('DOMContentLoaded', function() {
   },
   
   dateClick: function(event) {
-   var clickDate = prompt('What would you like to add?');
-    // console.log(event)
+  var clickDate = prompt('What would you like to add?');
       calendar.addEvent({
         title: clickDate,
         start: event.date,
-        // allDay: true
     })
-  // },
-  // select: function(info) {
-  //   alert('selected ' + info.startStr + ' to ' + info.endStr);
   },
     customButtons: {
       workoutBtn: {
@@ -184,7 +157,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   ],
     // US Holidays
-    // events: 'en.usa#holiday@group.v.calendar.google.com',
+    events: 'en.usa#holiday@group.v.calendar.google.com',
 
     eventClick: function(arg) {
 
