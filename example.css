@@ -13,20 +13,59 @@ html, body {
   width: 250px;
   padding: 0 10px;
   border: 1px solid rgb(0, 0, 0);
-  background: rgb(168, 193, 229);
+  background: 	 rgb(191,217,242);
   height: 750px !important;
   text-align: center !important;
   font-size: large;
+  
+  /* border-radius: 25px; */
 }
 
-btn {
-  background-color: grey !important;
-  color: black !important;
+p {
+  text-decoration: underline;
 }
+
+button {
+  background-color:rgb(0,51,102)!important;
+  color: white !important;
+  border: none !important;
+  z-index: -100 !important;
+  /* float: right; */
+  /* display: block; */
+  /* float: left; */
+  /* position: absolute; */
+  /* margin: 5px; */
+  /* background-color:rgb(112,112,112) !important; */
+}
+
 
 #external-events .fc-event {
   cursor: grab;
   margin: 3px 0;
+  background-color:	rgb(0,51,102)!important;
+  border-radius: 25px;
+  border: none !important;
+  /* width: 55px !important; */
+
+}
+.dropdown-item {
+  background-color: none !important;
+  color: white !important;
+  border-radius: none !important;
+  z-index: 9 !important;
+  
+}
+
+/* display: none;
+position: absolute;
+background-color: #f9f9f9;
+min-width: 160px;
+box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+z-index: 1; */
+.dropdown-menu {
+  z-index: -9 !important;
+  /* position: absolute !important; */
+  
 }
 
 #calendar-container {
@@ -41,6 +80,54 @@ btn {
   margin-bottom: 1100px !important;
   width: 2000px !important; 
 margin: 20px auto;
+}
+
+
+/* Make calendar mobile responsive */
+@media (max-width: 991px) {
+  .display-4 {
+    font-size: 1.5rem;
+  }
+  .day h5 {
+    background-color: #eee;
+    padding: 3px 5px 5px;
+    margin: -8px -8px 8px -8px;
+  }
+  .date {
+    padding-left: 4px;
+  }
+  .calendar-view>div {
+    display: none;
+  }
+  .calendar-view>div.show-only-list {
+    display: block;
+  }
+  .calendar-view>div.show-only-list .events-holder>a {
+    display: block;
+    border-radius: .25rem;
+    width: 100%;
+  }
+}
+
+@media (min-width: 992px) {
+  #calendar .calendar-view .day.grid {
+    min-height: 9vw;
+  }
+  #calendar .calendar-view .day.grid h5 small {
+    display: none;
+  }
+  #calendar .calendar-view .day.grid .events-holder a {
+    width: 25px;
+    height: 25px;
+    border-radius: 15px;
+    margin-right: 2px;
+  }
+  #calendar .calendar-view .day.grid .events-holder .course-name {
+    display: none;
+  }
+  #calendar .calendar-view .day.calendar-prior-months-date h5 small {
+    display: none;
+  }
 }
 
 

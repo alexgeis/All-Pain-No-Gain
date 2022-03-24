@@ -2,16 +2,20 @@
  // "@fullcalendar/bootstrap5": "^5.10.2",
 // const { response } = require("express");
 
+// $(".dropdown-menu").click(function(e){
+//   $("nav > ul").toggle();
+// });
 // Drop Down Menu
 var dropdownElementList = [].slice.call(document.querySelectorAll('.dropdown-toggle'))
 var dropdownList = dropdownElementList.map(function (dropdownToggleEl) {
   return new bootstrap.Dropdown(dropdownToggleEl)
 })
-
+// $('.dropdown-toggle').dropdown()
 
 document.addEventListener('DOMContentLoaded', function() {
     var Calendar = FullCalendar.Calendar;
     var Draggable = FullCalendar.Draggable;
+    var Draggable2 = FullCalendar.Draggable;
   
     var containerEl = document.getElementById('external-events');
     var calendarEl = document.getElementById('calendar');
@@ -27,9 +31,31 @@ document.addEventListener('DOMContentLoaded', function() {
         };
       }
     });
+
+    //to delete events
+//     new Draggable2(containerEl), {
+//     itemSelector: '.fc-event',
+//     eventDragStop: function(removeEvents) {
+
+//   var trashEl = jQuery('#calendarTrash');
+//   var ofs = trashEl.offset();
+
+//   var x1 = ofs.left;
+//   var x2 = ofs.left + trashEl.outerWidth(true);
+//   var y1 = ofs.top;
+//   var y2 = ofs.top + trashEl.outerHeight(true);
+
+//   if (jsEvent.pageX >= x1 && jsEvent.pageX<= x2 &&
+//       jsEvent.pageY >= y1 && jsEvent.pageY <= y2) {
+//       alert('SIII');
+//       $('#calendario').fullCalendar('removeEvents', event.id);
+//   }
+// }}
   
+
+
     // initialize the calendar
-   
+  
     // calendar.addEvent( event [, source ] )
 
     var calendar = new Calendar(calendarEl, {
@@ -52,13 +78,14 @@ document.addEventListener('DOMContentLoaded', function() {
   
     calendar.render();
   });
+  
 
 
 
 document.addEventListener('DOMContentLoaded', function() {
     var calendarEl = document.getElementById('calendar');
     var calendar = new FullCalendar.Calendar(calendarEl, {
-    themeSystem: 'bootstrap',
+    themeSystem: 'bootstrap5',
     initialView: 'dayGridMonth',
     displayEventTime: false,
     googleCalendarApiKey: 'AIzaSyAh3d6j-Y63jjjukLBG7FMPi8-qlQYT-94',
@@ -66,7 +93,7 @@ document.addEventListener('DOMContentLoaded', function() {
     headerToolbar: {
     left: 'today, dayGridMonth,timeGridWeek,timeGridDay mealBtn',
     center: 'title',
-    right: 'dayGridMonth,timeGridWeek,timeGridDay',
+    // right: 'dayGridMonth,timeGridWeek,timeGridDay',
     right: 'workoutBtn prevYear,prev,next,nextYear'
   },
   footerToolbar: {
@@ -130,3 +157,68 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     calendar.render();
 });
+
+
+// Events for calendar
+var calendar = new Calendar(calendarEl, {
+  timeZone: 'UTC',
+  events: [
+    {
+      id: 'a',
+      title: 'my event',
+      start: '2022-30-03'
+    }
+  ], 
+  //Need to set our button
+select: function(start, end, resource) {
+  console.log(
+  'select callback',
+  start.format(),
+  end.format(),
+  resource ? resource.id : '(no resource)'
+  );
+  }
+  });
+
+  //Our button to delete Events
+  $('#Delete').on('click', function() {
+  $('#calendar').fullCalendar('removeEvents', a); 
+      });
+
+// });
+
+//   eventClick: function(info){
+//     info.event.remove();
+// }
+//   eventDrop : function(info) {
+//     alert(info.event.title + " was dropped on "
+//             + info.event.start.toISOString());
+
+//     if (!confirm("Are you sure you want to remove this?")) {
+//         info.revert();
+//     }
+// },
+//   eventClick: function(info) {
+//     info.jsEvent.preventDefault(); // don't let the browser navigate
+// //delete an event
+//     if (info.event.id) {
+//         var event = calendar.getEventById(info.event.id);
+//         event.remove();
+//     }
+//   }
+// }); 
+var event = calendar.getEventById('a') // an event object!
+var start = event.start // a property (a Date object)
+console.log(start.toISOString()) // "2018-09-01T00:00:00.000Z"
+
+calendar.render();
+
+
+
+
+
+
+
+
+//$('#Delete').on('click', function() {
+// calendar.addEvent( event [, source ] )
