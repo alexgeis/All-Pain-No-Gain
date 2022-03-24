@@ -1,23 +1,13 @@
 // AIzaSyAh3d6j-Y63jjjukLBG7FMPi8-qlQYT-94
  // "@fullcalendar/bootstrap5": "^5.10.2",
 // const { response } = require("express");
-
-// $(".dropdown-menu").click(function(e){
-//   $("nav > ul").toggle();
-// });
-
-// $('#calendar').fullCalendar({
-//   year: 2012,
-//   month: 4,
-//   date: 25
-//  });  // This will initialize for May 25th, 2012.
-
-
+//_________________________________________________________________________________________
 // Drop Down Menu
 var dropdownElementList = [].slice.call(document.querySelectorAll('.dropdown-toggle'))
 var dropdownList = dropdownElementList.map(function (dropdownToggleEl) {
   return new bootstrap.Dropdown(dropdownToggleEl)
 })
+
 // $('.dropdown-toggle').dropdown()
 // $().dropdown('toggle')
 
@@ -31,6 +21,8 @@ var dropdownList = dropdownElementList.map(function (dropdownToggleEl) {
 //   }
 // });
 
+
+// ______________________________________________________________________________________
 document.addEventListener('DOMContentLoaded', function() {
     var Calendar = FullCalendar.Calendar;
     var Draggable = FullCalendar.Draggable;
@@ -49,6 +41,23 @@ document.addEventListener('DOMContentLoaded', function() {
         };
       }
     });
+    
+    //allows events to be dragged
+    var calendar = new Calendar(calendarEl, {
+      editable: true,
+      droppable: true, // this allows things to be dropped onto the calendar
+      drop: function(info) {
+        // is the "remove after drop" checkbox checked?
+        if (checkbox.checked) {
+          // if so, remove the element from the "Draggable Events" list
+          info.draggedEl.parentNode.removeChild(info.draggedEl);
+        }
+      }
+    });
+  
+    calendar.render();
+  });
+
 
     //to delete events
 //     new Draggable2(containerEl), {
@@ -69,29 +78,6 @@ document.addEventListener('DOMContentLoaded', function() {
 //       $('#calendario').fullCalendar('removeEvents', event.id);
 //   }
 // }}
-  
-
-
-    // initialize the calendar
-  
-    // calendar.addEvent( event [, source ] )
-// ______________________________________________________________________________________
-    //allows events to be dragged
-    var calendar = new Calendar(calendarEl, {
-      editable: true,
-      droppable: true, // this allows things to be dropped onto the calendar
-      drop: function(info) {
-        // is the "remove after drop" checkbox checked?
-        if (checkbox.checked) {
-          // if so, remove the element from the "Draggable Events" list
-          info.draggedEl.parentNode.removeChild(info.draggedEl);
-        }
-      }
-    });
-  
-    calendar.render();
-  });
-  
 
 //______________________________________________________________________________________________
 //Add events to calendar/formatting
@@ -103,10 +89,12 @@ document.addEventListener('DOMContentLoaded', function() {
     displayEventTime: false,
     googleCalendarApiKey: 'AIzaSyAh3d6j-Y63jjjukLBG7FMPi8-qlQYT-94',
     timeZone: 'UTC',
+    selectable: true,
+    editable: true,
     headerToolbar: {
     left: 'today, dayGridMonth,timeGridWeek,timeGridDay mealBtn',
     center: 'title',
-    right: 'dayGridMonth,timeGridWeek,timeGridDay',
+    // right: 'dayGridMonth,timeGridWeek,timeGridDay',
     right: 'workoutBtn prevYear,prev,next,nextYear'
   },
   footerToolbar: {
@@ -114,14 +102,14 @@ document.addEventListener('DOMContentLoaded', function() {
     center: '',
     right: 'prev,next'
   },
+  
   dateClick: function() {
     var clickDate = prompt('What would you like to add?');
-    if(!isNan(clickDate.valueOf())) 
       calendar.addEvent({
         title: clickDate,
-        start: date
+        // start: date,
         // allDay: true
-    });
+    })
   // },
   // select: function(info) {
   //   alert('selected ' + info.startStr + ' to ' + info.endStr);
@@ -165,9 +153,35 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       },
     },
+    eventDrop: function(info) {
+      alert(info.event.title + " will be deleted ");
+      if (!confirm("Are you sure about this change?")) {
+        info.event.remove();
+        
+      };
+      
+    },
     dayMaxEvents: true, // when too many events in a day, show the popover
-    // events: 'https://fullcalendar.io/api/demo-feeds/events.json?overload-day',
-
+  events: [
+    { 
+      id: '1',
+      title: 'The Title', // a property!
+      start: "2022-03-22", // a property!
+      end: "2022-03-22" // a property! ** see important note below about 'end' **
+    },
+    { 
+      id: '2',
+      title: 'The Title2', // a property!
+      start:  "2022-03-27", // a property!
+      end: "2022-03-27" // a property! ** see important note below about 'end' **
+    },
+    { 
+      id: '3',
+      title: 'The Title3', // a property!
+      start: "2022-03-29", // a property!
+      end: "2022-03-29" // a property! ** see important note below about 'end' **
+    }
+  ],
     // US Holidays
     // events: 'en.usa#holiday@group.v.calendar.google.com',
 
@@ -180,7 +194,7 @@ document.addEventListener('DOMContentLoaded', function() {
         arg.jsEvent.preventDefault();
     }
     });
-    calendar.render();
+    calendar.render(); 
 });
 
 
