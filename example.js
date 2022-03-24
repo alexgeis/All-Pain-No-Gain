@@ -5,12 +5,18 @@
 // $(".dropdown-menu").click(function(e){
 //   $("nav > ul").toggle();
 // });
+
+
+
+
 // Drop Down Menu
 var dropdownElementList = [].slice.call(document.querySelectorAll('.dropdown-toggle'))
 var dropdownList = dropdownElementList.map(function (dropdownToggleEl) {
   return new bootstrap.Dropdown(dropdownToggleEl)
 })
-// $('.dropdown-toggle').dropdown()
+$('.dropdown-toggle').dropdown()
+$().dropdown('toggle')
+
 
 document.addEventListener('DOMContentLoaded', function() {
     var Calendar = FullCalendar.Calendar;
