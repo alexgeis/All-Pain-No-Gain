@@ -14,9 +14,18 @@ var dropdownElementList = [].slice.call(document.querySelectorAll('.dropdown-tog
 var dropdownList = dropdownElementList.map(function (dropdownToggleEl) {
   return new bootstrap.Dropdown(dropdownToggleEl)
 })
-$('.dropdown-toggle').dropdown()
-$().dropdown('toggle')
+// $('.dropdown-toggle').dropdown()
+// $().dropdown('toggle')
 
+// $(".dropdown-menu").hide();
+// $(".dropdown-toggle").click(function (event) {
+//   event.preventDefault();
+//   var elems = $(this).closest("li");
+//   elems.siblings("li").find("ul").hide();
+//   if (elems.find(".dropdown-menu").length) {
+//     $(this).siblings(".dropdown-menu", elems).toggle(); // .toggle() instead of .show() here...
+//   }
+// });
 
 document.addEventListener('DOMContentLoaded', function() {
     var Calendar = FullCalendar.Calendar;
@@ -91,7 +100,7 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('DOMContentLoaded', function() {
     var calendarEl = document.getElementById('calendar');
     var calendar = new FullCalendar.Calendar(calendarEl, {
-    themeSystem: 'bootstrap5',
+    themeSystem: 'bootstrap',
     initialView: 'dayGridMonth',
     displayEventTime: false,
     googleCalendarApiKey: 'AIzaSyAh3d6j-Y63jjjukLBG7FMPi8-qlQYT-94',
@@ -99,7 +108,7 @@ document.addEventListener('DOMContentLoaded', function() {
     headerToolbar: {
     left: 'today, dayGridMonth,timeGridWeek,timeGridDay mealBtn',
     center: 'title',
-    // right: 'dayGridMonth,timeGridWeek,timeGridDay',
+    right: 'dayGridMonth,timeGridWeek,timeGridDay',
     right: 'workoutBtn prevYear,prev,next,nextYear'
   },
   footerToolbar: {
