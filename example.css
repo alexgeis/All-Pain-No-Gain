@@ -17,8 +17,6 @@ html, body {
   height: 750px !important;
   text-align: center !important;
   font-size: large;
-  /* z-index: -100 !important; */
-  /* border-radius: 25px; */
 }
 
 p {
@@ -27,17 +25,12 @@ p {
 
 button {
   background-color:rgb(0,51,102)!important;
-  color: white !important;
   border: none !important;
-  z-index: -150 !important;
-  /* float: right; */
-  /* display: block; */
-  /* float: left; */
-  /* position: absolute; */
-  /* margin: 5px; */
-  /* background-color:rgb(112,112,112) !important; */
 }
 
+/* .fc.footer-chunck {
+z-index: 5;
+} */
 
 #external-events .fc-event {
   cursor: grab;
@@ -45,15 +38,13 @@ button {
   background-color:	rgb(0,51,102)!important;
   border-radius: 25px;
   border: none !important;
-  /* z-index: 100 !important; ITS NOT THIS ONE*/
-  /* width: 55px !important; */
 
 }
 .dropdown-item {
   background-color: none !important;
   color: white !important;
   border-radius: none !important;
-  z-index: 5000 !important;
+  /* z-index: 5000 !important; */
   
 }
 .dropdown-menu.show {
@@ -71,14 +62,13 @@ min-width: 160px;
 box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 z-index: 1; */
 .dropdown-menu {
-  z-index: 5000 !important;
+  /* z-index: 5000 !important; */
   /* position: absolute !important; */
   
 }
 
 #calendar-container {
   position: relative;
-  z-index: 1;
   margin-left: 200px;
 }
 
@@ -92,7 +82,7 @@ margin: 20px auto;
 
 
 /* Make calendar mobile responsive */
-@media (max-width: 991px) {
+/* @media (max-width: 991px) {
   .display-4 {
     font-size: 1.5rem;
   }
@@ -136,7 +126,7 @@ margin: 20px auto;
   #calendar .calendar-view .day.calendar-prior-months-date h5 small {
     display: none;
   }
-}
+} */
 
 
   

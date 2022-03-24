@@ -156,6 +156,7 @@ document.addEventListener('DOMContentLoaded', function() {
       end: "2022-03-29" // a property! ** see important note below about 'end' **
     }
   ],
+  // remove: function getElementById('2')
     // US Holidays
     events: 'en.usa#holiday@group.v.calendar.google.com',
 
@@ -182,23 +183,6 @@ document.addEventListener('DOMContentLoaded', function() {
 //       start: '2022-30-03'
 //     }
 //   ], 
-//   //Need to set our button
-// select: function(start, end, resource) {
-//   console.log(
-//   'select callback',
-//   start.format(),
-//   end.format(),
-//   resource ? resource.id : '(no resource)'
-//   );
-//   }
-//   });
-
-  // //Our button to delete Events
-  // $('#Delete').on('click', function() {
-  // $('#calendar').fullCalendar('removeEvents', a); 
-  //     });
-
-// });
 
 //   eventClick: function(info){
 //     info.event.remove();
