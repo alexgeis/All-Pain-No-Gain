@@ -1,6 +1,6 @@
 const router = require("express").Router();
 //EXAMPLE MODEL REQUIRE
-const { User, Painting } = require("../models");
+const { User, Event } = require("../../models");
 
 // GET all THINGS - Gallery Model - including model Painting - 'homepage' handlebars template
 router.get("/", async (req, res) => {
