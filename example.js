@@ -103,11 +103,12 @@ document.addEventListener('DOMContentLoaded', function() {
     right: 'prev,next'
   },
   
-  dateClick: function() {
-    var clickDate = prompt('What would you like to add?');
+  dateClick: function(event) {
+   var clickDate = prompt('What would you like to add?');
+    // console.log(event)
       calendar.addEvent({
         title: clickDate,
-        // start: date,
+        start: event.date,
         // allDay: true
     })
   // },
