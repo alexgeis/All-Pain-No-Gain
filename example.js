@@ -6,7 +6,11 @@
 //   $("nav > ul").toggle();
 // });
 
-
+// $('#calendar').fullCalendar({
+//   year: 2012,
+//   month: 4,
+//   date: 25
+//  });  // This will initialize for May 25th, 2012.
 
 
 // Drop Down Menu
@@ -30,7 +34,6 @@ var dropdownList = dropdownElementList.map(function (dropdownToggleEl) {
 document.addEventListener('DOMContentLoaded', function() {
     var Calendar = FullCalendar.Calendar;
     var Draggable = FullCalendar.Draggable;
-    var Draggable2 = FullCalendar.Draggable;
   
     var containerEl = document.getElementById('external-events');
     var calendarEl = document.getElementById('calendar');
@@ -72,14 +75,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // initialize the calendar
   
     // calendar.addEvent( event [, source ] )
-
+// ______________________________________________________________________________________
+    //allows events to be dragged
     var calendar = new Calendar(calendarEl, {
-      headerToolbar: {
-        // left: 'prev,next today',
-        center: 'title',
-        right: 'dayGridMonth,timeGridWeek,timeGridDay'
-      },
-      // width: 1650,
       editable: true,
       droppable: true, // this allows things to be dropped onto the calendar
       drop: function(info) {
@@ -95,8 +93,8 @@ document.addEventListener('DOMContentLoaded', function() {
   });
   
 
-
-
+//______________________________________________________________________________________________
+//Add events to calendar/formatting
 document.addEventListener('DOMContentLoaded', function() {
     var calendarEl = document.getElementById('calendar');
     var calendar = new FullCalendar.Calendar(calendarEl, {
@@ -116,20 +114,32 @@ document.addEventListener('DOMContentLoaded', function() {
     center: '',
     right: 'prev,next'
   },
+  dateClick: function() {
+    var clickDate = prompt('What would you like to add?');
+    if(!isNan(clickDate.valueOf())) 
+      calendar.addEvent({
+        title: clickDate,
+        start: date
+        // allDay: true
+    });
+  // },
+  // select: function(info) {
+  //   alert('selected ' + info.startStr + ' to ' + info.endStr);
+  },
     customButtons: {
       workoutBtn: {
         text: 'Add Workout',
         click: function() {
-          var dateStr = prompt('Enter a date in YYYY-MM-DD format for your workout');
+          var dateStr = prompt('Enter a date in YYYY-MM-DD format for your workout:');
           var date = new Date(dateStr + 'T00:00:00'); // will be in local time
+          var workoutInput = prompt('Great. Now, enter your workout:');
 
           if (!isNaN(date.valueOf())) { // valid?
             calendar.addEvent({
-              title: 'dynamic event',
+              title: workoutInput,
               start: date,
               allDay: true
             });
-            alert('Great. Now, update your database...');
           } else {
             alert('Invalid date.');
           }
@@ -138,25 +148,25 @@ document.addEventListener('DOMContentLoaded', function() {
       mealBtn: {
         text: 'Add Meal',
         click: function() {
-          var dateStr = prompt('Enter a date in YYYY-MM-DD format for your meal');
+          var dateStr = prompt('Enter a date in YYYY-MM-DD format for your meal:');
           var date = new Date(dateStr + 'T00:00:00'); // will be in local time
+          var mealInput = prompt('Great. Now, enter your meal:');
 
           if (!isNaN(date.valueOf())) { // valid?
             calendar.addEvent({
-              title: 'dynamic event',
+              title: mealInput,
               start: date,
               allDay: true
             });
-            alert('Great. Now, update your database...');
+            
           } else {
             alert('Invalid date.');
           }
         }
       },
     },
-    editable: true,
     dayMaxEvents: true, // when too many events in a day, show the popover
-    events: 'https://fullcalendar.io/api/demo-feeds/events.json?overload-day',
+    // events: 'https://fullcalendar.io/api/demo-feeds/events.json?overload-day',
 
     // US Holidays
     // events: 'en.usa#holiday@group.v.calendar.google.com',
@@ -164,7 +174,7 @@ document.addEventListener('DOMContentLoaded', function() {
     eventClick: function(arg) {
 
         // opens events in a popup window
-        window.open(arg.event.url, '_blank', 'width=700,height=600');
+        // window.open(arg.event.url, '_blank', 'width=700,height=600');
 
         // prevents current tab from navigating
         arg.jsEvent.preventDefault();
