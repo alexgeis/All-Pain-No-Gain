@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function() {
     headerToolbar: {
     left: 'today, dayGridMonth,timeGridWeek,timeGridDay mealBtn',
     center: 'title',
-    right: 'dayGridMonth,timeGridWeek,timeGridDay',
+    // right: 'dayGridMonth,timeGridWeek,timeGridDay',
     right: 'workoutBtn prevYear,prev,next,nextYear'
   },
   footerToolbar: {
