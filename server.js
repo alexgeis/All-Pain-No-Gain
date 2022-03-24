@@ -8,6 +8,7 @@ const SequelizeStore = require("connect-session-sequelize")(session.Store);
 const routes = require("./controllers");
 const db = require("./models");
 require("dotenv").config();
+// db.sequelize.sync();
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -29,7 +30,6 @@ const hbs = exphbs.create({});
 // app.use(session(sess));
 // app.use(session(process.env.sess));
 
-// db.sequelize.sync();
 app.engine("handlebars", hbs.engine);
 app.set("view engine", "handlebars");
 
