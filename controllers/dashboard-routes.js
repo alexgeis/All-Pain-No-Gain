@@ -1,34 +1,33 @@
 const router = require("express").Router();
 const { User, Event } = require("../models");
-const withAuth = require("../utils/auth");
+// cons = require("../utils/auth");
+// inser after URL and before async
+// "/", async (req, res) => {}
 
-router.get("/", withAuth, async (req, res) => {
+router.get("/", async (req, res) => {
   try {
-    const postData = await Post.findAll({
-      where: {
-        userId: req.session.userId,
-      },
-    });
+    // const postData = await Post.findAll({
+    //   where: {
+    //     userId: req.session.userId,
+    //   },
+    // });
 
-    //serialize the incoming data via map array method
-    const posts = postData.map((post) => post.get({ plain: true }));
+    // //serialize the incoming data via map array method
+    // const posts = postData.map((post) => post.get({ plain: true }));
 
-    res.render("all-posts-admin", {
-      layout: "dashboard",
-      posts,
-    });
+    res.render("dashboard");
   } catch (err) {
     res.redirect("login");
   }
 });
 
-router.get("/new", withAuth, (req, res) => {
+router.get("/new", (req, res) => {
   res.render("new-post", {
     layout: "dashboard",
   });
 });
 
-router.get("/edit/:id", withAuth, async (req, res) => {
+router.get("/edit/:id", async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id);
 
