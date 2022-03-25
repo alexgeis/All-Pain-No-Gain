@@ -32,6 +32,7 @@ font-size: larger !important ;
 background: rgb(246,255,255);
 background: radial-gradient(circle, rgba(246,255,255,0.5998774509803921) 60%, rgba(148,187,233,0.2595413165266106) 85%);
 border: 1px rgb(0,51,102) solid !important;
+border-radius: 5px !important;
 }
 
 #external-events {
