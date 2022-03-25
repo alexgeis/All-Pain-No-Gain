@@ -1,4 +1,5 @@
 
+
 //_________________________________________________________________________________________
 // Drop Down Menu
 var dropdownElementList = [].slice.call(document.querySelectorAll('.dropdown-toggle'))
@@ -47,6 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var calendarEl = document.getElementById('calendar');
     var calendar = new FullCalendar.Calendar(calendarEl, {
     themeSystem: 'bootstrap5',
+    schedulerLicenseKey: 'GPL-My-Project-Is-Open-Source',
     initialView: 'dayGridMonth',
     displayEventTime: false,
     googleCalendarApiKey: 'AIzaSyAh3d6j-Y63jjjukLBG7FMPi8-qlQYT-94',
@@ -105,15 +107,34 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       },
     },
-    eventDrop: function(info) {
-      alert(info.event.title + " will be deleted ");
-      if (!confirm("Are you sure about this change?")) {
-        info.event.remove();
+    updateEvent: function(info) {
+      // alert(info.event.title + " will be deleted ");
+      // if (!confirm("Are you sure about this change?")) {
+      //   info.event.remove();
         
-      };
+      // };
+      $('#calendar').fullCalendar({
+        eventClick: function(calEvent, jsEvent, view) {
       
+          alert('Event: ' + calEvent.title);
+          alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
+          alert('View: ' + view.name);
+      
+          // change the border color just for fun
+          $(this).css('border-color', 'red');
+      
+        }
+      });
+      $('#calendar').fullCalendar({
+        eventClick: function(event) {
+          event.title = "CLICKED!";
+      $('#calendar').fullCalendar('updateEvent', event);
+      prompt(" Do want to change " + info.event.title);
+        }
+      });
     },
     dayMaxEvents: true, // when too many events in a day, show the popover
+    
   events: [ //creating dummy events
     { 
       id: '1',
@@ -131,10 +152,29 @@ document.addEventListener('DOMContentLoaded', function() {
       id: '3',
       title: 'Be spectacular', // a property!
       start: "2022-03-31", // a property!
-      end: "2022-03-31" // a property! 
+      end: "2022-03-31", // a property! 
+      display: 'background'
     },
   ],
-  // remove: function getElementById('2')
+
+
+
+
+  
+  // $("#calendar").fullCalendar('removeEvents'); 
+  // $("#calendar").fullCalendar('addEventSource', JSON, true); 
+//   eventClick: function(calEvent) {
+//     $('#calendar').fullCalendar('removeEvents', calEvent.id);
+// },
+//   var event = calendar.getEventById(EventID);
+
+//   $('#Delete').click(function(){
+//     var event = calendar.getEventById('2');
+//     alert("Remove Event "+event.title);
+//     event.remove();
+// });
+  
+  // remove: function getElementById()
     // US Holidays
     // events: 'en.usa#holiday@group.v.calendar.google.com',
 
