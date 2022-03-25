@@ -1,8 +1,8 @@
 const router = require("express").Router();
 const { User } = require("../../models");
 
-// GET user info
-// /api/users
+// GET all user info
+// /api/user
 router.get("/", async (req, res) => {
   try {
     const userData = await User.findAll({
@@ -18,7 +18,9 @@ router.get("/", async (req, res) => {
     res.status(500).json(error);
   }
 });
+
 // CREATE new user
+// /api/user
 router.post("/", async (req, res) => {
   try {
     const dbUserData = await User.create({
@@ -39,48 +41,40 @@ router.post("/", async (req, res) => {
 });
 
 // Login
+// /api/user/login
 router.post("/login", async (req, res) => {
   try {
-    const dbUserData = await User.findOne({
+    const user = await User.findOne({
       where: {
         email: req.body.email,
       },
     });
-
-    if (!dbUserData) {
-      res
-        .status(400)
-        .json({ message: "Incorrect email or password. Please try again!" });
+    //if user record in User table does not match the request body username
+    if (!user) {
+      res.status(400).json({ message: "Account login unsuccessful!" });
       return;
     }
-
-    const validPassword = await dbUserData.checkPassword(req.body.password);
-
+    //if password record in User table does not match the request body password
+    const validPassword = user.checkPassword(req.body.password);
     if (!validPassword) {
-      res
-        .status(400)
-        .json({ message: "Incorrect email or password. Please try again!" });
+      res.status(400).json({ message: "Account login unsuccessful!" });
       return;
     }
 
     req.session.save(() => {
+      req.session.userId = user.id;
+      req.session.username = user.username;
+      req.session.email = user.email;
       req.session.loggedIn = true;
-      console.log(
-        "🚀 ~ file: user-routes.js ~ line 57 ~ req.session.save ~ req.session.cookie",
-        req.session.cookie
-      );
 
-      res
-        .status(200)
-        .json({ user: dbUserData, message: "You are now logged in!" });
+      res.json({ user, message: "Login successful!" });
     });
   } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
+    res.status(400).json({ message: "No user account exists!" });
   }
 });
 
-// Logout
+// /api/user/logout
 router.post("/logout", (req, res) => {
   if (req.session.loggedIn) {
     req.session.destroy(() => {

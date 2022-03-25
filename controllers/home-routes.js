@@ -1,7 +1,8 @@
 const router = require("express").Router();
 const { User, Event } = require("../models/");
 
-// get all posts
+// GET homepage.handlebars
+// /
 router.get("/", async (req, res) => {
   try {
     // const postData = await Post.findAll({
@@ -16,41 +17,41 @@ router.get("/", async (req, res) => {
   }
 });
 
-// get one post
-router.get("/post/:id", async (req, res) => {
-  try {
-    const postData = await Post.findByPk(req.params.id, {
-      include: [
-        User,
-        {
-          model: Comment,
-          include: [User],
-        },
-      ],
-    });
-
-    if (postData) {
-      const post = postData.get({ plain: true });
-
-      res.render("single-post", { post });
-    } else {
-      res.status(404).end();
-    }
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
-
 //get login redirect
-router.get("/login", (req, res) => {
-  //   if (req.session.loggedIn) {
-  //     res.redirect("/dashboard");
-  //     return;
-  //   }
-
+router.get("/login", async (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect("/dashboard");
+    return;
+  }
   res.render("login");
 });
 
+router.post("/login", async (req, res) => {
+  const user = await User.findOne({
+    where: {
+      username: req.body.username,
+    },
+  });
+  //if user record in User table does not match the request body username
+  if (!user) {
+    res.status(400).json({ message: "Account login unsuccessful!" });
+    return;
+  }
+  //if password record in User table does not match the request body password
+  const validPassword = user.checkPassword(req.body.password);
+  if (!validPassword) {
+    res.status(400).json({ message: "Account login unsuccessful!" });
+    return;
+  }
+
+  req.session.save(() => {
+    req.session.userId = user.id;
+    req.session.username = user.username;
+    req.session.loggedIn = true;
+
+    res.json({ user, message: "Login successful!" });
+  });
+});
 // //get signup redirect
 // router.get("/signup", (req, res) => {
 //   if (req.session.loggedIn) {
