@@ -35,7 +35,7 @@ app.set("view engine", "handlebars");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "/public")));
 
 console.log(process.env.JAWSDB_URL);
 sequelize.sync({ force: false }).then(() => {
