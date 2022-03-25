@@ -8,6 +8,7 @@ var dropdownList = dropdownElementList.map(function (dropdownToggleEl) {
 })
 
 // ______________________________________________________________________________________
+//Making the options draggable
 document.addEventListener('DOMContentLoaded', function() {
     var Calendar = FullCalendar.Calendar;
     var Draggable = FullCalendar.Draggable;
@@ -56,9 +57,12 @@ document.addEventListener('DOMContentLoaded', function() {
     selectable: true,
     editable: true,
     headerToolbar: {
-    left: 'today, dayGridMonth,timeGridWeek,timeGridDay mealBtn',
+    left: 'today, dayGridMonth,timeGridWeek,timeGridDay, mealBtn',
     center: 'title',
     right: 'workoutBtn, prevYear,prev,next,nextYear'
+    // left: 'today, dayGridMonth,timeGridWeek,timeGridDay, deleteBtn',
+    // center: 'title',
+    // right: 'workoutBtn,, mealBtn, prevYear,prev,next,nextYear'
   },
 
   dateClick: function(event) {
@@ -106,32 +110,14 @@ document.addEventListener('DOMContentLoaded', function() {
           }
         }
       },
-    },
-    updateEvent: function(info) {
-      // alert(info.event.title + " will be deleted ");
-      // if (!confirm("Are you sure about this change?")) {
-      //   info.event.remove();
-        
-      // };
-      $('#calendar').fullCalendar({
-        eventClick: function(calEvent, jsEvent, view) {
-      
-          alert('Event: ' + calEvent.title);
-          alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
-          alert('View: ' + view.name);
-      
-          // change the border color just for fun
-          $(this).css('border-color', 'red');
-      
-        }
-      });
-      $('#calendar').fullCalendar({
-        eventClick: function(event) {
-          event.title = "CLICKED!";
-      $('#calendar').fullCalendar('updateEvent', event);
-      prompt(" Do want to change " + info.event.title);
-        }
-      });
+      // deleteBtn: {
+      //   text: 'Delete',
+      //   click: function(event) {
+      //     alert('Please click the event you would like to delete');
+      //     calendar.getEventById(
+      //     event.remove()
+      //   )}
+      // },
     },
     dayMaxEvents: true, // when too many events in a day, show the popover
     
