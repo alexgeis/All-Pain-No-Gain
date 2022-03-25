@@ -1,235 +1,275 @@
 <!DOCTYPE html>
 <html lang='en'>
+
 <head>
-    <meta charset='utf-8' />
-    <!-- Full calendar styling -->
-    <link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.10.2/main.min.css' rel='stylesheet' />
-    
-    <!-- JS FOR FULL CALENDAR -->
-<script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.2/main.min.js"></script>
+  <meta charset='utf-8' />
+  <!-- Full calendar styling -->
+  <link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.10.2/main.min.css' rel='stylesheet' />
 
-    <!-- Boostrap 4 -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+  <!-- JS FOR FULL CALENDAR -->
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.2/main.min.js"></script>
 
-<!-- Bootstrap Icons -->
+  <!-- Boostrap 4 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+    integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+
+  <!-- Bootstrap Icons -->
   <link href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css' rel='stylesheet'>
 
-<!-- Google API Link -->
+  <!-- Google API Link -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <!-- <link href='https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.css' rel='stylesheet'> -->
-<!-- <link href='https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.1/css/all.css' rel='stylesheet'> -->
-<!-- BOOTSTRAP 5 -->
-<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous"> -->
-<!-- BOOTSTRAP 4 -->
-<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
+  <!-- <link href='https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.css' rel='stylesheet'> -->
+  <!-- <link href='https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.1/css/all.css' rel='stylesheet'> -->
+  <!-- BOOTSTRAP 5 -->
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous"> -->
+  <!-- BOOTSTRAP 4 -->
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
 
-<!-- Our Stylesheet -->
-<link rel="stylesheet" href="./example.css">
-
-
+  <!-- Our Stylesheet -->
+  <link rel="stylesheet" href="./public/css/example.css">
 
 
-<title>All Pain No Gain</title>
+
+
+  <title>All Pain No Gain</title>
 </head>
 
 <body>
   <!-- <div class="container-fluid"> -->
   <!-- <div id="fixingCal"> -->
-    <div id='external-events'>
-        <p>
-          <strong>Workouts</strong>
-        </p>
-      
-        <div class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event'>
-          <div class='fc-event-main'>
-            <button class="btn btn-secondary dropdown-toggle" " type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+  <div id='external-events'>
+    <p>
+      <strong>Workouts</strong>
+    </p>
+
+    <div class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event'>
+      <div class='fc-event-main'>
+        <div class="dropdown">
+
+
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-toggle="dropdown"
+            aria-expanded="false">
             Cardio
           </button>
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
             <div class="dropdown-header">Type</div>
-            <li><a class="dropdown-item fc-event listItems" href="#">Speed Walking</a></li>
-            <li><a class="dropdown-item fc-event" href="#">Jogging</a></li>
-            <li><a class="dropdown-item fc-event" href="#">Running</a></li>
+            <a class="dropdown-item fc-event" href="#">Speed Walking</a>
+            <a class="dropdown-item fc-event" href="#">Jogging</a>
+            <a class="dropdown-item fc-event" href="#">Running</a>
             <div class="dropdown-divider"></div>
             <div class="dropdown-header">Duration</div>
-            <li><a class="dropdown-item fc-event" href="#">30 minutes or less</a></li>
-            <li><a class="dropdown-item fc-event" href="#">30 min - 1 hour</a></li>
-            <li><a class="dropdown-item fc-event" href="#">1 hour +</a></li>
+            <a class="dropdown-item fc-event" href="#">30 minutes or less</a>
+            <a class="dropdown-item fc-event" href="#">30 min - 1 hour</a>
+            <a class="dropdown-item fc-event" href="#">1 hour +</a>
             <span class="dropdown-item-text">You go, rockstar!</span>
-          </ul>
+          </div>
         </div>
-        </div> 
-        <br>
+      </div>
+    </div>
+    <br>
 
-        <div class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event'>
-          <div class='fc-event-main'>
-            <button class="btn btn-secondary dropdown-toggle" " type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-              Strength
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-              <div class="dropdown-header">Type</div>
-              <li><a class="dropdown-item fc-event" href="#">Weight Lifting</a></li>
-              <li><a class="dropdown-item fc-event" href="#">TRX</a></li>
-              <li><a class="dropdown-item fc-event" href="#">Crossfit</a></li>
-              <div class="dropdown-divider"></div>
-              <div class="dropdown-header">Duration</div>
-              <li><a class="dropdown-item fc-event" href="#">30 minutes or less</a></li>
-              <li><a class="dropdown-item fc-event" href="#">30 min - 1 hour</a></li>
-              <li><a class="dropdown-item fc-event" href="#">1 hour +</a></li>
-              <span class="dropdown-item-text">Hustle for that muscle!</span>
-            </ul>
-          </div>
-        </div>
+    <div class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event'>
+      <div class='fc-event-main'>
+        <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+          data-toggle="dropdown" aria-expanded="false">
+          Strength
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+          <div class="dropdown-header">Type</div>
+          <li><a class="dropdown-item fc-event" href="#">Weight Lifting</a></li>
+          <li><a class="dropdown-item fc-event" href="#">TRX</a></li>
+          <li><a class="dropdown-item fc-event" href="#">Crossfit</a></li>
+          <div class="dropdown-divider"></div>
+          <div class="dropdown-header">Duration</div>
+          <li><a class="dropdown-item fc-event" href="#">30 minutes or less</a></li>
+          <li><a class="dropdown-item fc-event" href="#">30 min - 1 hour</a></li>
+          <li><a class="dropdown-item fc-event" href="#">1 hour +</a></li>
+          <span class="dropdown-item-text">Hustle for that muscle!</span>
+        </ul>
+      </div>
+    </div>
+  </div>
+    <br>
 
-        <br>
-        <div class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event'>
-          <div class='fc-event-main'>
-            <button class="btn btn-secondary dropdown-toggle" " type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-              Aerobic
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-              <div class="dropdown-header">Type</div>
-              <li><a class="dropdown-item fc-event" href="#">Yoga</a></li>
-              <li><a class="dropdown-item fc-event" href="#">Pilates</a></li>
-              <li><a class="dropdown-item fc-event" href="#">Other</a></li>
-              <div class="dropdown-divider"></div>
-              <div class="dropdown-header">Duration</div>
-              <li><a class="dropdown-item fc-event" href="#">30 minutes or less</a></li>
-              <li><a class="dropdown-item fc-event" href="#">30 min - 1 hour</a></li>
-              <li><a class="dropdown-item fc-event" href="#">1 hour +</a></li>
-              <span class="dropdown-item-text">Stay determined!</span>
-            </ul>
-          </div>
-        </div> 
-        <br>
-        <div class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event'>
-          <div class='fc-event-main'>
-            <button class="btn btn-secondary dropdown-toggle" " type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-              Swimming
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-              <div class="dropdown-header">Type</div>
-              <li><a class="dropdown-item fc-event" href="#">Casually</a></li>
-              <li><a class="dropdown-item fc-event" href="#">Laps</a></li>
-              <li><a class="dropdown-item fc-event" href="#">Treading Water</a></li>
-              <div class="dropdown-divider"></div>
-              <div class="dropdown-header">Duration</div>
-              <li><a class="dropdown-item fc-event" href="#">30 minutes or less</a></li>
-              <li><a class="dropdown-item fc-event" href="#">30 min - 1 hour</a></li>
-              <li><a class="dropdown-item fc-event" href="#">1 hour +</a></li>
-              <span class="dropdown-item-text">Just keep swimming!</span>
-            </ul>
-          </div>
-        </div>
-        <br>
-        <div class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event'>
-          <div class='fc-event-main'>
-            <button class="btn btn-secondary dropdown-toggle" " type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-              Other
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-              <div class="dropdown-header">Type</div>
-              <li><a class="dropdown-item fc-event" href="#">Hiking</a></li>
-              <li><a class="dropdown-item fc-event" href="#">Cycling</a></li>
-              <li><a class="dropdown-item fc-event" href="#">Running</a></li>
-              <div class="dropdown-divider"></div>
-              <div class="dropdown-header">Duration</div>
-              <li><a class="dropdown-item fc-event" href="#">30 minutes or less</a></li>
-              <li><a class="dropdown-item fc-event" href="#">30 min - 1 hour</a></li>
-              <li><a class="dropdown-item fc-event" href="#">1 hour +</a></li>
-              <span class="dropdown-item-text">You are built to be epic!</span>
-            </ul>
-          </div>
-        </div>
-        <br>
-        <br>
-        <p>
-          <strong>Meals</strong>
-      </p>
-        <div class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event'>
-          <div class='fc-event-main'>
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                  Breakfast
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                  <li><a class="dropdown-item fc-event listItems" href="#">Light Breakfast- under 300 calories</a></li>
-                  <li><a class="dropdown-item fc-event" href="#">Breakfast- between 300-500 calories</a></li>
-                  <li><a class="dropdown-item fc-event" href="#">Large Breakfast- over 500 calories</a></li>
-                </ul>
-              </div>
-            </div>
-            <br>
-        <div class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event'>
-          <div class='fc-event-main'>
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-              Lunch
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-              <li><a class="dropdown-item fc-event" href="#">Light Lunch- under 300 calories</a></li>
-              <li><a class="dropdown-item fc-event" href="#">Lunch- between 300-600 calories</a></li>
-              <li><a class="dropdown-item fc-event" href="#">Large Lunch- over 600 calories</a></li>
-            </ul>
-          </div>
-        </div>
-        <br>
-        <div class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event'>
-          <div class='fc-event-main'>
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-              Dinner
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-              <li><a class="dropdown-item fc-event" href="#">Light Dinner- under 400 calories</a></li>
-              <li><a class="dropdown-item fc-event" href="#">Dinner- between 400-700 calories</a></li>
-              <li><a class="dropdown-item fc-event" href="#">Large Dinner- over 700 calories</a></li>
-            </ul>
-          </div>
-        </div>
-        <br>
-        <div class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event'>
-          <div class='fc-event-main'>
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-              Snacks
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-              <li><a class="dropdown-item fc-event" href="#">Snacks- under 100 calories</a></li>
-              <li><a class="dropdown-item fc-event" href="#">Snacks- between 100-200 calories</a></li>
-              <li><a class="dropdown-item fc-event" href="#">Snacks- over 200 calories</a></li>
-            </ul>
-          </div>
-        </div>
-        <br>
-        <div class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event'>
-          <div class='fc-event-main'>
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-              Drinks
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-              <li><a class="dropdown-item fc-event" href="#">Drinks- under 100 calories</a></li>
-              <li><a class="dropdown-item fc-event" href="#">Drinks- between 100-200 calories</a></li>
-              <li><a class="dropdown-item fc-event" href="#">Drinks- over 200 calories</a></li>
-            </ul>
-          </div>
-        </div> 
-        <br>
-        <br>
-        <br>
-        <div id="calendarTrash" class="calendar-trash">Drag Event to Delete <i class="bi bi-trash3-fill"></i></div>
-<button id='Delete'>Delete Events</button></p> </div>
+    <div class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event'>
+      <div class='fc-event-main'>
+        <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+          data-toggle="dropdown" aria-expanded="false">
+          Aerobic
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+          <div class="dropdown-header">Type</div>
+          <li><a class="dropdown-item fc-event" href="#">Yoga</a></li>
+          <li><a class="dropdown-item fc-event" href="#">Pilates</a></li>
+          <li><a class="dropdown-item fc-event" href="#">Other</a></li>
+          <div class="dropdown-divider"></div>
+          <div class="dropdown-header">Duration</div>
+          <li><a class="dropdown-item fc-event" href="#">30 minutes or less</a></li>
+          <li><a class="dropdown-item fc-event" href="#">30 min - 1 hour</a></li>
+          <li><a class="dropdown-item fc-event" href="#">1 hour +</a></li>
+          <span class="dropdown-item-text">Stay determined!</span>
+        </ul>
+      </div>
+    </div>
+  </div>
+    <br>
 
-    <div class="w-100" id='calendar'></div>
-    
+    <div class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event'>
+      <div class='fc-event-main'>
+        <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" " type=" button" id="dropdownMenuButton1"
+          data-toggle="dropdown" aria-expanded="false">
+          Swimming
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+          <div class="dropdown-header">Type</div>
+          <li><a class="dropdown-item fc-event" href="#">Casually</a></li>
+          <li><a class="dropdown-item fc-event" href="#">Laps</a></li>
+          <li><a class="dropdown-item fc-event" href="#">Treading Water</a></li>
+          <div class="dropdown-divider"></div>
+          <div class="dropdown-header">Duration</div>
+          <li><a class="dropdown-item fc-event" href="#">30 minutes or less</a></li>
+          <li><a class="dropdown-item fc-event" href="#">30 min - 1 hour</a></li>
+          <li><a class="dropdown-item fc-event" href="#">1 hour +</a></li>
+          <span class="dropdown-item-text">Just keep swimming!</span>
+        </ul>
+      </div>
+    </div>
+  </div>
+    <br>
+
+    <div class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event'>
+      <div class='fc-event-main'>
+        <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type=" button" id="dropdownMenuButton1"
+          data-toggle="dropdown" aria-expanded="false">
+          Other
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+          <div class="dropdown-header">Type</div>
+          <li><a class="dropdown-item fc-event" href="#">Hiking</a></li>
+          <li><a class="dropdown-item fc-event" href="#">Cycling</a></li>
+          <li><a class="dropdown-item fc-event" href="#">Running</a></li>
+          <div class="dropdown-divider"></div>
+          <div class="dropdown-header">Duration</div>
+          <li><a class="dropdown-item fc-event" href="#">30 minutes or less</a></li>
+          <li><a class="dropdown-item fc-event" href="#">30 min - 1 hour</a></li>
+          <li><a class="dropdown-item fc-event" href="#">1 hour +</a></li>
+          <span class="dropdown-item-text">You are built to be epic!</span>
+        </ul>
+      </div>
+    </div>
+  </div>
+    <br>
+    <br>
+    <p>
+      <strong>Meals</strong>
+    </p>
+    <div class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event'>
+      <div class='fc-event-main'>
+        <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+          data-toggle="dropdown" aria-expanded="false">
+          Breakfast
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+          <li><a class="dropdown-item fc-event listItems" href="#">Light Breakfast- under 300 calories</a></li>
+          <li><a class="dropdown-item fc-event" href="#">Breakfast- between 300-500 calories</a></li>
+          <li><a class="dropdown-item fc-event" href="#">Large Breakfast- over 500 calories</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+    <br>
+
+    <div class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event'>
+      <div class='fc-event-main'>
+        <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+          data-toggle="dropdown" aria-expanded="false">
+          Lunch
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+          <li><a class="dropdown-item fc-event" href="#">Light Lunch- under 300 calories</a></li>
+          <li><a class="dropdown-item fc-event" href="#">Lunch- between 300-600 calories</a></li>
+          <li><a class="dropdown-item fc-event" href="#">Large Lunch- over 600 calories</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+    <br>
+    <div class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event'>
+      <div class='fc-event-main'>
+        <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+          data-toggle="dropdown" aria-expanded="false">
+          Dinner
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+          <li><a class="dropdown-item fc-event" href="#">Light Dinner- under 400 calories</a></li>
+          <li><a class="dropdown-item fc-event" href="#">Dinner- between 400-700 calories</a></li>
+          <li><a class="dropdown-item fc-event" href="#">Large Dinner- over 700 calories</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+    <br>
+    <div class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event'>
+      <div class='fc-event-main'>
+        <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+          data-toggle="dropdown" aria-expanded="false">
+          Snacks
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+          <li><a class="dropdown-item fc-event" href="#">Snacks- under 100 calories</a></li>
+          <li><a class="dropdown-item fc-event" href="#">Snacks- between 100-200 calories</a></li>
+          <li><a class="dropdown-item fc-event" href="#">Snacks- over 200 calories</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+    <br>
+    <div class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event'>
+      <div class='fc-event-main'>
+        <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+          data-toggle="dropdown" aria-expanded="false">
+          Drinks
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+          <li><a class="dropdown-item fc-event" href="#">Drinks- under 100 calories</a></li>
+          <li><a class="dropdown-item fc-event" href="#">Drinks- between 100-200 calories</a></li>
+          <li><a class="dropdown-item fc-event" href="#">Drinks- over 200 calories</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+    <br>
+    <br>
+    <br>
+    <div id="calendarTrash" class="calendar-trash">Drag Event to Delete <i class="bi bi-trash3-fill"></i></div>
+    <button id='Delete'>Delete Events</button></p>
+  </div>
+
+  <div class="w-100" id='calendar'></div>
+
 
 </body>
 
 <script src="https://cdn.jsdelivr.net/npm/fullcalendar-scheduler@5.3.0/main.min.js"></script>
 <!-- FOR BOOTSTRAP 4 -->
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+  integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 <!-- JQUERY FOR BOOTSTRAP 4 -->
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+  integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <!-- BOOTSTRAP 4 -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
 <!-- MY JS -->
-<script src="./example.js"></script>
+<script src="./public/js/example.js"></script>
 
 </html>
-
