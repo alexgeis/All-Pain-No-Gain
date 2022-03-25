@@ -10,7 +10,7 @@
 // });
 
 const Event = require("./Event");
-const User = require("./User-pass-val");
+const User = require("./User");
 
 Event.belongsTo(User);
 

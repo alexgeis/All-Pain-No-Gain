@@ -14,20 +14,19 @@ const PORT = process.env.PORT || 3001;
 
 const hbs = exphbs.create({});
 
-app.use(routes);
-// const sess = {
-//   secret: 'Super secret secret',
-//   cookie: {
-//     // Stored in milliseconds (86400 === 1 day)
-//     maxAge: 86400,
-//   },
-//   resave: false,
-//   saveUninitialized: true,
-//   store: new SequelizeStore({
-//     db: sequelize,
-//   }),
-// };
-// app.use(session(sess));
+const sess = {
+  secret: "secretsecret",
+  cookie: {
+    // Stored in milliseconds (86400 === 1 day)
+    // maxAge: 86400,
+  },
+  resave: false,
+  saveUninitialized: true,
+  store: new SequelizeStore({
+    db: sequelize,
+  }),
+};
+app.use(session(sess));
 // app.use(session(process.env.sess));
 
 app.engine("handlebars", hbs.engine);
@@ -37,7 +36,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "/public")));
 
+app.use(routes);
+
 console.log(process.env.JAWSDB_URL);
 sequelize.sync({ force: false }).then(() => {
-  app.listen(PORT, () => console.log(`Now listening at ${PORT}`));
+  app.listen(PORT, () =>
+    console.log(`Now listening at http://localhost:${PORT}`)
+  );
 });
