@@ -14,7 +14,7 @@ async function loginFormHandler(event) {
     })
 
     return(response.ok) ?
-      document.location.replace('/calender'):
+      document.location.replace('/dashboard'):
         alert(response.statusText)
     
   }
@@ -35,7 +35,7 @@ async function signupFormHandler(event) {
     })
 
     return(response.ok) ?
-      document.location.replace('/calender'):
+      document.location.replace('/dashboard'):
         alert(response.statusText)
     
   }
