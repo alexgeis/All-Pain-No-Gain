@@ -3,9 +3,9 @@
 //_________________________________________________________________________________________
 // Drop Down Menu
 var dropdownElementList = [].slice.call(document.querySelectorAll('.dropdown-toggle'))
-var dropdownList = dropdownElementList.map(function (dropdownToggleEl) {
-  return new bootstrap.Dropdown(dropdownToggleEl)
-})
+// var dropdownList = dropdownElementList.map(function (dropdownToggleEl) {
+//   return new bootstrap.Dropdown(dropdownToggleEl)
+// })
 
 // ______________________________________________________________________________________
 //Making the options draggable
