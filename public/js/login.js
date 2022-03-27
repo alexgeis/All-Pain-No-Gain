@@ -29,7 +29,7 @@ async function signupFormHandler(event) {
   const email = document.querySelector("#email-signup").value;
   const password = document.querySelector("#password-signup").value;
   console.log(username, email, password);
-  if (username && password) {
+  if (email && password) {
     const response = await fetch("/api/user", {
       method: "POST",
       body: JSON.stringify({
@@ -40,9 +40,18 @@ async function signupFormHandler(event) {
       headers: { "Content-Type": "application/json" },
     });
     if (response.ok) {
+      // const response = await fetch("/dashboard", {
+      //   method: "GET",
+      //   // body: JSON.stringify({
+      //   //   username,
+      //   //   password,
+      //   //   email,
+      //   // }),
+      //   headers: { "Content-Type": "application/json" },
+      // });
       document.location.replace("/dashboard");
     } else {
-      alert("Failed to login");
+      alert("Failed to sign up");
     }
     // return response.ok
     //   ? document.location.replace("/dashboard")
