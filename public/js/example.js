@@ -138,7 +138,7 @@ document.addEventListener("DOMContentLoaded", function () {
         .catch((err) => {
           console.error("Error: ", err);
         });
-      return grabEvent;
+      return grabEvent
     },
     dayMaxEvents: true, // when too many events in a day, show the popover
 
