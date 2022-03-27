@@ -124,6 +124,22 @@ document.addEventListener("DOMContentLoaded", function () {
       //   )}
       // },
     },
+    eventReceive: function (info) {
+      console.log(info.event.start);
+      console.log(info.event.title);
+      // const title = info.event.title
+      // const duration = 30
+      const grabEvent = fetch("/api/event", {
+        method: "POST",
+        body: JSON.stringify({ title: info.event.title, duration: 30 }),
+        headers: { "Content-Type": "application/json" },
+      })
+        .then((response) => response.json())
+        .catch((err) => {
+          console.error("Error: ", err);
+        });
+      return grabEvent;
+    },
     dayMaxEvents: true, // when too many events in a day, show the popover
 
     events: [
