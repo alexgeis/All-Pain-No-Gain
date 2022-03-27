@@ -11,15 +11,15 @@ function callQuote() {
     },
   })
     .then(function (response) {
-      console.log(response.status);
+      // console.log(response.status);
       return response.json();
     })
     .then(function (data) {
-      console.log(data);
-      console.log(data.quotes[0].body);
-      console.log(data.quotes[0].author);
-      quoteBox.textContent = '"' + data.quotes[0].body + '"';
-      authorBox.textContent = "-- " + data.quotes[0].author;
+      // console.log(data);
+      console.log(data.quotes);
+      const randoNum = Math.floor(Math.random() * data.quotes.length);
+      quoteBox.textContent = '"' + data.quotes[randoNum].body + '"';
+      authorBox.textContent = "-- " + data.quotes[randoNum].author;
     });
 }
 callQuote();

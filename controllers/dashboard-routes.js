@@ -4,20 +4,26 @@ const { User, Event } = require("../models");
 // inser after URL and before async
 // "/", async (req, res) => {}
 
+// /dashboard
 router.get("/", async (req, res) => {
   try {
-    // const postData = await Post.findAll({
-    //   where: {
-    //     userId: req.session.userId,
-    //   },
+    // console.log(req.session);
+    // const eventData = await Event.findAll({
+    //   // where: {
+    //   //   userId: req.session.userId,
+    //   // },
     // });
 
     // //serialize the incoming data via map array method
-    // const posts = postData.map((post) => post.get({ plain: true }));
+    // const events = eventData.map((x) => x.get({ plain: true }));
+    // console.log(events);
 
+    // res.render("dashboard", { events });
     res.render("dashboard");
+    console.log(req.session);
   } catch (err) {
-    res.redirect("login");
+    // res.redirect("login");
+    res.json("DIDNT WORK");
   }
 });
 
