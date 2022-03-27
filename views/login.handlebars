@@ -1,50 +1,70 @@
  <style>
-  body{
-    background-image: url(https://images.unsplash.com/photo-1468971050039-be99497410af?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80); background-repeat: no-repeat; background-size: cover;
+  html { 
+    background: url(https://images.unsplash.com/photo-1482440308425-276ad0f28b19?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+   body {
+   min-height: 100%;
+   background-image: url(https://images.unsplash.com/photo-1482440308425-276ad0f28b19?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    background-attachment: fixed;
+    background-position: center center;
+}
+ 
+  .form-container{
+padding: 30px;
+border-radius: 10px;
+box-shadow: 0px 0px 10px 0px #000;
+  opacity: 90% !important;
+  background-color: rgba(0,0,0,.5);
+    color: #fff;
   }
 </style>
  
-<div class="row text-center justify-content-center m-0">
-      
-      <div class=" card mb-3 col-md-6 text-warning mt-3 align-items-right bg-transparent">
-      <form class="login-form" style="max-width: 280px">
-        <h2 class="h3 mb-3">Sign in</h2>
-        <label for="" class="sr-only"></label>
-        <input type="email" id="email-login" class="form-control" placeholder="Email Address" required autofocus>
-        <label for="password"></label>
-        <input type="password" id="password-login" placeholder="Password" class="form-control
-        "> 
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" value="remember-me">Remember Me
-          </label>
-        </div>
-        <div class="mt-3">
-        <button class="btn btn-lg btn-warning btn-block">Sign in</button>
-      </div>
-      </form>
-      </div>
-
-      {{!-- <div class="row text-center justify-content-center m-0"> --}}
-      {{!-- <div class="row text-center justify-content-center"> --}}
-        <div class=" card custom-card col-md-6  mt-5 align-items-right bg-transparent">
-        <form class="form signup-form" style="max-width: 280px;">
-          <h2 class="h3 mb-3 mt-3 text-danger">Sign Up</h2>
-          <label for="name" ></label>
-          <input type="text" class="form-control" id="name-signup" placeholder="Name" >
-          <label class="sr-only"></label>
-          <input type="email" id="email-signup" class="form-control" placeholder="Email Address" required autofocus>
-          <label for="password"></label>
-          <input type="password" id="password-signup" placeholder="Password" class="form-control
-          "> 
-          <div class="mt-3">
-          <button class="btn btn-lg btn-danger btn-block">Sign Up</button>
-        </div>
+<section class="container-fluid">
+     <section class="row">
+       <section class="col-12 col-sm-6 col-md-3 text-white">
+        <form class="form-container mt-4 login-form">
+          <div class="form-group">
+            <h2>Login</h2>
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" id="email-login" aria-describedby="emailHelp">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="password-login">
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Submit</button>
         </form>
-        </div>
-</div>
+     </section>
 
-</div>    
+     <section class="col-12 col-sm-6 col-md-3 text-white">
+        <form class="form-container mt-4 signup-form">
+          <div class="form-group">
+            <div class="form-group">
+              <h2>Sign Up</h2>
+              <label for="examplename">Name</label>
+              <input type="name" class="form-control" id="name-signup">
+            </div>
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" id="email-signup" aria-describedby="emailHelp">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="password-signup">
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Submit</button>
+        </form>
+       </section>
+     </section>
+   </section>
 
     <script src="/js/login.js"></script>
 
