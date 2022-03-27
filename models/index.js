@@ -12,12 +12,13 @@
 const Event = require("./Event");
 const User = require("./User");
 
-Event.belongsTo(User);
+Event.belongsTo(User, {
+  foreignKey: "user_id",
+  onDelete: "CASCADE",
+});
 
 User.hasMany(Event, {
-  foreignKey: {
-    allowNull: true,
-  },
+  foreignKey: "user_id",
   onDelete: "SET NULL",
 });
 
