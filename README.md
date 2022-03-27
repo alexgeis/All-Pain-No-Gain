@@ -14,39 +14,40 @@ Whether you're a health fiend, a casual gym-goer and broccoli-eater, or just get
 
 ### General
 
-This app first presents you with our welcome page that has an inspirational quote that is randomly generated with an API. Once you click the "Get Started" button, you are taken to a login/sign-up page that will ask for your credentials. Once submitted, you are directed to the main page. On the main page you will find a side menu, calendar, header, and footer. This side menu has different button options that- once clicked- will dropdown a menu of specific choices pertaining to that category. The user can drag and drop these choices anywhere on the calendar to either mark what they've done, or mark what they will do. This can be used to scehdule their week, track their progress, etc. There are two buttons on the top of the calendar, "Add meal", and "Add workout", that also let the user enter specific data they would like displayed on the calendar that is not listed on the side menu. With all the being said, the user is not limited to just entering meals and workouts on the calendar. They can also click any date on the calendar and enter any kind of input they would like. The footer on the main page contains four links that the user can follow to a calorie counter for food, a calorie tracker for workouts, healthy food alternative suggestions, and tips to get your workout on at home. 
+This app first presents you with our welcome page that has an inspirational quote that is randomly generated with an API. Once you click the "Get Started" button, you are taken to a login/sign-up page that will ask for your credentials. Once submitted, you are directed to the main page. On the main page you will find a side menu, calendar, header, and footer. This side menu has different button options that- once clicked- will dropdown a menu of specific choices pertaining to that category. The user can drag and drop these choices anywhere on the calendar to either mark what they've done, or mark what they will do. This can be used to scehdule their week, track their progress, etc. There are two buttons on the top of the calendar, "Add meal", and "Add workout", that also let the user enter specific data they would like displayed on the calendar that is not listed on the side menu. With all the being said, the user is not limited to just entering meals and workouts on the calendar. They can also click any date on the calendar and enter any kind of input they would like. The footer on the main page contains four links that the user can follow to a calorie counter for food, a calorie tracker for workouts, healthy food alternative suggestions, and tips to get your workout on at home.
 
 ## Acceptance Criteria
+
 We are prepared to:
 
-* Speak technically about features we implemented in our project
+- Speak technically about features we implemented in our project
 
-* Explain and execute git branching workflow in a collaborative project
+- Explain and execute git branching workflow in a collaborative project
 
-* Resolve merge conflicts
+- Resolve merge conflicts
 
-* Explain agile software development
+- Explain agile software development
 
-* Design, build and deploy a full-stack web application to Heroku
+- Design, build and deploy a full-stack web application to Heroku
 
-* Present a professional presentation and repository README for our project
+- Present a professional presentation and repository README for our project
 
 ## Review
 
 We are submitting the following for review:
 
-* The URL of the Heroku page:
+- The URL of the Heroku page: [All Pain No Grain - Site](https://gentle-everglades-97970.herokuapp.com/)
 
-* The URL of the GitHub repository:
-https://github.com/alexgeis/All-Pain-No-Gain
+- The URL of the GitHub repository:
+  https://github.com/alexgeis/All-Pain-No-Gain
 
-* Contributors: 
-Alex Geis 
-Maria Paterno
-Brenden Holt
-Gavin Wentzel
+- Contributors:
+  Alex Geis
+  Maria Paterno
+  Brenden Holt
+  Gavin Wentzel
 
-* Screenshots:
+- Screenshots:
 
 ![Main Page Screenshot](./public/Calendar-Screenshot.PNG)
 
@@ -72,4 +73,3 @@ NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
 LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
 OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
