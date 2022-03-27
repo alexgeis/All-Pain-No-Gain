@@ -10,7 +10,7 @@ With our team, we conceived and executed a design that solves a real-world probl
 
 ## User Story
 
-Whether you're a heatlh fiend, a casual gym-goer and broccoli-eater, or just getting started; we designed an app that will encompass all your health-tracking needs in one spot. This app will inspire you with motivational quotes, help you track your food intake and exercise, offer you calorie counting resources, and provide tips for workouts/eating better.
+Whether you're a health fiend, a casual gym-goer and broccoli-eater, or just getting started; we designed an app that will encompass all your health-tracking needs in one spot. This app will inspire you with motivational quotes, help you track your food intake and exercise, offer you calorie counting resources, and provide tips for workouts/eating better.
 
 ### General
 
